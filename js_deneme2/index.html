@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern Karşılama Kartı</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        button {
+            background-color: #5c67f2;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #4350af;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1 id="baslik">Hoş Geldiniz!</h1>
+        <p id="metin">Web sitemizin yeni interaktif arayüzünü denemek için aşağıdaki butona tıklayın.</p>
+        <button onclick="karsila()">Beni Tanıştır</button>
+    </div>
+
+    <script>
+        function karsila() {
+            let isim = prompt("Lütfen isminizi giriniz:");
+            if (isim != null && isim != "") {
+                document.getElementById("baslik").innerText = "Merhaba, " + isim + "!";
+                document.getElementById("metin").innerText = "Aramıza katıldığın için çok mutluyuz. Harika tasarımlar yapmaya hazır mısın?";
+                document.querySelector("button").style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
